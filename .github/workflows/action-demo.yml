@@ -11,4 +11,7 @@ jobs:
         uses: actions/checkout@v2
       - name: push branch to master
         run: |
-          git push origin refs/remotes/test-branch-master-must-follow:master
+          git fetch origin
+          git checkout master
+          git reset --hard test-branch-master-must-follow
+          git push -f origin
