@@ -12,6 +12,4 @@ jobs:
       - name: push branch to master
         run: |
           git fetch origin
-          git checkout master
-          git reset --hard test-branch-master-must-follow
-          git push -f origin
+          git push -f origin test-branch-master-must-follow:master
